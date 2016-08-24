@@ -1,0 +1,2 @@
+defmodule MsgpackBenchmark do
+end

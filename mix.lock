@@ -1,0 +1,2 @@
+%{"msgpax": {:hex, :msgpax, "0.8.2", "0e83d86e7cbf1bdcf7b870c25951df042ec19f9804a1a9c2fa59091a43ee2886", [:mix], []},
+  "poison": {:hex, :poison, "2.2.0", "4763b69a8a77bd77d26f477d196428b741261a761257ff1cf92753a0d4d24a63", [:mix], []}}
