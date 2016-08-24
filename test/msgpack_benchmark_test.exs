@@ -33,6 +33,11 @@ defmodule MsgpackBenchmarkTest do
     IO.puts "Benchmark, #{times} times do:"
 
     IO.puts ""
+    IO.puts "Do nothing (benchmark the benchmark)"
+    Measure.duration times, fn ->
+    end
+
+    IO.puts ""
     IO.puts "Msgpax: pack"
     Measure.duration times, fn ->
       (data |> Msgpax.pack! |> IO.iodata_to_binary)
