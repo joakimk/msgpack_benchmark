@@ -10,17 +10,20 @@ Data size:
 
 Benchmark, 10000 times do:
 
+Do nothing (benchmark the benchmark)
+2.896 ms in total, 0.2896 μs/iteration 3453039 iterations/second
+
 Msgpax: pack
-54.295 ms in total, 0.0054295 ms/iteration 184179 iterations/second
+50.963 ms in total, 5.0963 μs/iteration 196221 iterations/second
 
 Poison: encode
-62.953 ms in total, 0.0062953 ms/iteration 158849 iterations/second
+54.689 ms in total, 5.4689 μs/iteration 182852 iterations/second
 
 Msgpax: pack and unpack
-96.585 ms in total, 0.009658499999999999 ms/iteration 103536 iterations/second
+81.534 ms in total, 8.1534 μs/iteration 122648 iterations/second
 
 Poison: encode and decode
-132.647 ms in total, 0.013264699999999999 ms/iteration 75388 iterations/second
+155.935 ms in total, 15.5935 μs/iteration 64129 iterations/second
 ```
 
 ## "Big" data:
@@ -31,15 +34,18 @@ Data size:
 
 Benchmark, 10000 times do:
 
+Do nothing (benchmark the benchmark)
+1.239 ms in total, 0.1239 μs/iteration 8071025 iterations/second
+
 Msgpax: pack
-1365.45 ms in total, 0.136545 ms/iteration 7324 iterations/second
+1404.629 ms in total, 140.4629 μs/iteration 7119 iterations/second
 
 Poison: encode
-6266.781 ms in total, 0.6266781 ms/iteration 1596 iterations/second
+6498.529 ms in total, 649.8529 μs/iteration 1539 iterations/second
 
 Msgpax: pack and unpack
-2063.596 ms in total, 0.2063596 ms/iteration 4846 iterations/second
+2025.419 ms in total, 202.5419 μs/iteration 4937 iterations/second
 
 Poison: encode and decode
-10045.307 ms in total, 1.0045307 ms/iteration 995 iterations/second
+10045.583 ms in total, 1004.5583 μs/iteration 995 iterations/second
 ```

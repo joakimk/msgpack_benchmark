@@ -71,9 +71,9 @@ defmodule Measure do
       function.()
     end
 
-    ms = (:os.system_time - start_time)/1000000
-    ms_per_iteration = ms / count
-    iterations_per_second = :erlang.round(1000 / ms_per_iteration)
-    IO.puts "#{ms} ms in total, #{ms_per_iteration} ms/iteration #{iterations_per_second} iterations/second"
+    microseconds = (:os.system_time - start_time)/1000
+    microseconds_per_iteration = microseconds / count
+    iterations_per_second = :erlang.round(1000000 / microseconds_per_iteration)
+    IO.puts "#{microseconds / 1000} ms in total, #{microseconds_per_iteration} μs/iteration #{iterations_per_second} iterations/second"
   end
 end
