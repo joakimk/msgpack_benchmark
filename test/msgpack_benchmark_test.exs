@@ -15,11 +15,20 @@ defmodule MsgpackBenchmarkTest do
     assert (data |> Msgpax.pack! |> IO.iodata_to_binary |> Msgpax.unpack!) == %{"list" => [1, 2, 3], "simple" => "data"}
     assert (data |> Poison.encode! |> Poison.decode!) == %{"list" => [1, 2, 3], "simple" => "data"}
 
+    benchmark(data)
+  end
+
+  test "with lots of data" do
+    data = File.read!("test/data.json") |> Poison.decode!
+    benchmark(data)
+  end
+
+  def benchmark(data) do
     IO.puts "Data size:"
     IO.inspect msg_pack_length: Msgpax.pack!(data) |> IO.iodata_to_binary |> byte_size, json_length: Poison.encode!(data) |> byte_size
     IO.puts ""
 
-    times = 100000
+    times = 10000
 
     IO.puts "Benchmark, #{times} times do:"
 
@@ -48,7 +57,6 @@ defmodule MsgpackBenchmarkTest do
     end
   end
 end
-
 
 defmodule Measure do
   def duration(count, function) do
